@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="data:;base64,=">
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="assets/jquery.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body style="background-color: 	#FFFFFF; margin: 0px;">  
+    <div class="centered" id="log_page">
+    Вход <br>
+    <input type="text" id="Nameinput" placeholder="Введите имя" value="">
+    <span class="alert" id="name_alert"> ! Имя должно быть длиной от 5 до 40 символов</span> <br>
+    <input type="text" id="Passinput" placeholder="Введите пароль" value="">
+    <span class="alert" id="pass_alert"> ! Пароль должно быть длиной от 5 до 40 символов</span> <br>
+    <button id="login" type="button" disabled="true" onclick="Login()">Войти </button>
+    <span class="alert" id="wrong_alert"> ! Неправильное имя или пароль </span> 
+    <br>
+    <button id="to_reg" type="button" onclick="Show_reg()">Регистрация </button>
+  </div>
+
+  <div class="centered" id="reg_page">
+    Регистрация <br>
+    <input type="text" id="Name_reg" placeholder="Введите имя" value=""> 
+    <span class="alert" id="name_alert_r"> ! Имя должно быть длиной от 5 до 40 символов</span> <br>
+    <input type="text" id="Pass_reg" placeholder="Введите пароль" value="">
+    <span class="alert" id="pass_alert_r"> ! Пароль должно быть длиной от 5 до 40 символов</span><br>
+    <button id="reg" type="button" disabled="true" onclick="Register()">Зарегистрироваться </button>
+    <span class="alert" id="taken_alert"> ! Имя уже занято </span> 
+    <br>
+    <button id="to_login" type="button">Обратно ко входу</button>
+  </div>
+
+  <div id="summary_page">
+    
+  <div class="header">
+    Семейные расходы
+      <div class="navigation">
+        <span class="nick_outp" style="margin-left: auto;"> </span>
+      <button type="button" class="collapsible"></button> 
+      <div class="content exit"> 
+        <button type="button" class="exit" onclick="Exit()">Выход</button> 
+      </div>
+    </div>
+    <br>
+    <span class="nav_button" onclick="GetSummary()"> Summary </span>
+    <span class="nav_button" onclick="Get_Charts()"> Charts </span>
+    <div>
+      
+    </div>
+  </div>
+  <input id="date_input" type="month" name="start"  min="2010-03"> <!-- mb add current month as default? -->
+  <br>
+  <div id = "SumBox">
+    <table id="SumTable">
+      <tbody>
+        <tr>
+          <td class="firstcol">Доходы</td>
+          <td class = "seccol" id="total_income">
+              
+          </td>
+        </tr>
+        <tr id="middlerow">
+          <td class="firstcol">Расходы</td>
+          <td id="total_expenses">
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="firstcol">Итог</td>
+          <td id="Surplus"> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="blur" onclick="Exit_red()"> </div>
+  <span id="crest" onclick="Exit_red()"> X </span> 
+  <div id="add_dial">
+    <div id="addpage_name">  </div>
+    <div class="input_div"> 
+      Название перевода
+      <input type="text" class="br_input" id="tr_name" value="">
+    </div>
+    <div class="input_div">
+      Категория
+      <input type="text" class="br_input" id="tr_categorie" value="">
+    </div>
+    <div class="input_div">
+      Количество
+      <input type="text" class="br_input" id="tr_amount" value="">
+    </div>
+    <div class="input_div">
+      Дата
+      <input class="br_input" id="tr_date" type="month" min="2010-03">
+    </div>
+    <button type="button" id="add_tr_btn"> Добавить </button> 
+    <button type="button" id="remove_tr_btn"> Удалить </button>
+  </div>
+</div>
+<div id="Charts_page">
+  <div class="header">
+    Семейные расходы
+      <div class="navigation">
+        <span class="nick_outp" style="margin-left: auto; ;">Egor Iv </span>
+      <button type="button" class="collapsible"></button> 
+      <div class="content exit"> 
+        <button type="button" class="exit" onclick="Exit()">Выход</button> 
+      </div>
+    </div>
+    <br>
+    <span class="nav_button" onclick="GetSummary()"> Summary </span>
+    <span class="nav_button" onclick="Get_Charts()"> Charts </span>
+    <div>
+    </div>
+  </div>
+  <input id="first_date" type="month">
+  <input id="second_date" type="month"> <br>
+  <button id="show_chrt" type="button" disabled="true" onclick="Get_Charts()">Показать графики</button>
+  <br>
+  <div id="pie_chart" class="chart"> <!--Chart 1 -->
+  </div>
+  <div id="col_chart" class="chart">  <!--Chart 2 -->
+  </div>
+</div>
+  </body>
+  <script src="assets/login.js"></script>
+</html>
