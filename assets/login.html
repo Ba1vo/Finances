@@ -9,17 +9,18 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="assets/styles.css">
   </head>
-  <body style="background-color: 	#FFFFFF; margin: 0px;">  
+  <body style="background-color: 	#FFFFFF; margin: 0px;">
+
     <div class="centered" id="log_page">
     Вход <br>
     <input type="text" id="Nameinput" placeholder="Введите имя" value="">
     <span class="alert" id="name_alert"> ! Имя должно быть длиной от 5 до 40 символов</span> <br>
     <input type="text" id="Passinput" placeholder="Введите пароль" value="">
     <span class="alert" id="pass_alert"> ! Пароль должно быть длиной от 5 до 40 символов</span> <br>
-    <button id="login" type="button" disabled="true" onclick="Login()">Войти </button>
+    <button id="login" type="button" disabled="true">Войти </button>
     <span class="alert" id="wrong_alert"> ! Неправильное имя или пароль </span> 
     <br>
-    <button id="to_reg" type="button" onclick="Show_reg()">Регистрация </button>
+    <button id="to_reg" type="button">Регистрация </button>
   </div>
 
   <div class="centered" id="reg_page">
@@ -28,14 +29,13 @@
     <span class="alert" id="name_alert_r"> ! Имя должно быть длиной от 5 до 40 символов</span> <br>
     <input type="text" id="Pass_reg" placeholder="Введите пароль" value="">
     <span class="alert" id="pass_alert_r"> ! Пароль должно быть длиной от 5 до 40 символов</span><br>
-    <button id="reg" type="button" disabled="true" onclick="Register()">Зарегистрироваться </button>
+    <button id="reg" type="button" disabled="true">Зарегистрироваться </button>
     <span class="alert" id="taken_alert"> ! Имя уже занято </span> 
     <br>
     <button id="to_login" type="button">Обратно ко входу</button>
   </div>
 
   <div id="summary_page">
-    
   <div class="header">
     Семейные расходы
       <div class="navigation">
@@ -124,7 +124,10 @@
   </div>
   <div id="col_chart" class="chart">  <!--Chart 2 -->
   </div>
+  <script src="assets/charts.js"></script>
 </div>
   </body>
-  <script src="assets/login.js"></script>
+    <script src="assets/summary.js"></script>
+    <script src="assets/core.js"></script>
+ <!-- <script src="assets/login.js"></script> -->
 </html>
